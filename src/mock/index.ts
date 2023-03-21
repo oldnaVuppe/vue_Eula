@@ -1,7 +1,7 @@
 // 1. 引入mockjs
 import Mock from "mockjs";
 Mock.setup({
-  timeout: "3000-4000", // 设置相应时间
+  timeout: "1000-2000", // 设置相应时间
 });
 // 2. 引入mock数据
 export default Mock.mock("http://localhost:10500/api/login",({ body, ...data }): {
