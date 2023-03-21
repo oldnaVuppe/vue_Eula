@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 550px;
+            min-height: 300px;
+            max-width: 550px;
+            max-height: 300px;
+            margin-top: 280px;
+            background-color: rgba(137, 207, 235, 0.76);
+            border: 0;
+            padding: 0 20px;
+            font-size: 24px;
+        }
+
+        .div {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 550px;
+            min-height: 300px;
+            max-width: 550px;
+            max-height: 300px;
+            background-color: rgba(137, 207, 235, 0.76);
+            border: 0;
+            padding: 0 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="el-card">
+            <input type="text" name="" id="" value="123">
+            <input type="text" name="" id="" value="321">
+        </div>
+    </div>
+    <script>
+        // // 鼠标到视口的距离
+        // const div = document.querySelector('.div');
+        // div.addEventListener('mousedown', (e)=>{
+        //    return
+        // }, false)
+        // const box = document.querySelector('.box');
+        // box.addEventListener('mousedown', (e) => {
+        //     console.log(e);
+        //     e.stopPropagation();
+        //     const ract = document.querySelector('.box').getBoundingClientRect();
+        //     console.log(ract);
+        //     console.log('按下了', e);
+        //     // 鼠标到元素边距
+        //     const disX = e.clientX - ract.left;
+        //     const disY = e.clientY - ract.top;
+        //     console.log(disX, disY);
+        //     // if (disX > 120 && disX < 500 && disY > 10 && disY < 170) {
+        //     //     console.log('在中间');
+        //     //     // 移除点击事件
+        //     //     box.removeEventListener('res', (e) => {
+        //     //         console.log(1);
+        //     //         console.log(res);
+        //     //     }, true);
+        //     //     return;
+        //     // } else {
+        //     //     console.log('不在中间');
+        //     // }
+        //     const move = (e) => {
+        //         box.style.left = e.clientX - disX + 'px';
+        //         box.style.top = e.clientY - disY + 'px';
+        //         box.style.transform = 'none';
+        //         box.style.marginTop = '0'
+        //     }
+        //     box.addEventListener('mousemove', move);
+
+        //     box.addEventListener('mouseup', (e) => {
+        //         console.log('松开了', e);
+        //         box.removeEventListener('mousemove', move);
+        //     });
+        //     box.addEventListener('mouseleave', (e) => {
+        //         console.log('离开了', e);
+        //         box.removeEventListener('mousemove', move);
+        //     });
+        // });
+        const box = document.querySelector('.box');
+        // 阻止事件捕获
+        document.querySelector('.el-card')?.addEventListener('mousedown', (e) => {
+            console.log('阻止事件捕获', 1);
+        }, true);
+        box.addEventListener('mousedown', (e) => {
+            // 组织事件冒泡
+            // e.preventDefault();
+            const ract = document.querySelector('.box')?.getBoundingClientRect();
+            // console.log(ract);
+            console.log('按下了', e);
+            // 判断鼠标的位置在不在box的中间部分
+            const disX = e.clientX - ract.left;
+            const disY = e.clientY - ract.top;
+            const move = (e) => {
+                box.style.left = e.clientX - disX + 'px';
+                box.style.top = e.clientY - disY + 'px';
+                box.style.transform = 'none';
+                box.style.marginTop = '0'
+            }
+            box.addEventListener('mousemove', move);
+            box.addEventListener('mouseup', (e) => {
+                box.removeEventListener('mousemove', move);
+            });
+            box.addEventListener('mouseleave', (e) => {
+                box.removeEventListener('mousemove', move);
+            });
+        }, false);
+    </script>
+</body>
+
+</html>
