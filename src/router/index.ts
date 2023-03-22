@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from "vue-router";
 
 const routes = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: "/:pathMatch(.*)*",
@@ -31,6 +31,10 @@ const routes = createRouter({
         {
           path: "home",
           component: () => import("./../views/home/index.vue"),
+        },
+        {
+          path: "todolist",
+          component: () => import("./../views/todolist/index.vue"),
         },
       ],
     },

@@ -166,6 +166,9 @@ and the repository exists.
 Host github.com
   Hostname ssh.github.com
   Port 443
+
+// git pull 拉下来了，修改好了却不能提交，使用强制提交
+git push origin main -f
 ```
 
 ## 路由守卫
@@ -274,3 +277,20 @@ Node.js v18.14.1
 ```
 
 ## layout 布局
+
+```tsx
+// 使用侧边栏，layout/menus/index.vue
+
+```
+
+## 半路使用Ant Design Vue
+
+```tsx
+[https://antdv.com/docs/vue/introduce-cn]
+npm install ant-design-vue --save
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
+use(Antd)
+// 使用icon
+npm install --save @ant-design/icons-vue
+```

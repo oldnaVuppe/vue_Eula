@@ -3,6 +3,10 @@ import "./style.css";
 import App from "./App.vue";
 import "./styles/index.scss";
 import "element-plus/dist/index.css";
+// 使用 Ant Design Vue
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
+
 // 引入路由守卫
 import "./router/permission";
 import router from "./router";
@@ -17,7 +21,7 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     // console.log(key, component);
 }
 
-app.use(router).mount("#app");
+app.use(router).use(Antd).mount("#app");
 
 console.log( [
     "    __     __",

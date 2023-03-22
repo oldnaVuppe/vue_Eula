@@ -1,87 +1,47 @@
 <script setup lang="ts">
+import Menu from './Menu/index.vue'
 import { ref } from 'vue'
-import {
-    Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
-} from '@element-plus/icons-vue'
-
-const isCollapse = ref(true)
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
+const isCollapse = ref(false)
+const menuWidth = ref(0)
 </script>
 
 <template>
     <div class="common-layout">
         <el-container class="container">
-            <el-aside width="314px" id="aside">
-                <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-                    <el-radio-button :label="false">expand</el-radio-button>
-                    <el-radio-button :label="true">collapse</el-radio-button>
-                </el-radio-group>
-                <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
-                    @close="handleClose">
-                    <el-sub-menu index="1">
-                        <template #title>
-                            <el-icon>
-                                <location />
-                            </el-icon>
-                            <span>Navigator One</span>
-                        </template>
-                        <el-menu-item-group>
-                            <template #title><span>Group One</span></template>
-                            <el-menu-item index="1-1">item one</el-menu-item>
-                            <el-menu-item index="1-2">item two</el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group title="Group Two">
-                            <el-menu-item index="1-3">item three</el-menu-item>
-                        </el-menu-item-group>
-                        <el-sub-menu index="1-4">
-                            <template #title><span>item four</span></template>
-                            <el-menu-item index="1-4-1">item one</el-menu-item>
-                        </el-sub-menu>
-                    </el-sub-menu>
-                    <el-menu-item index="2">
-                        <el-icon><icon-menu /></el-icon>
-                        <template #title>Navigator Two</template>
-                    </el-menu-item>
-                    <el-menu-item index="3" disabled>
-                        <el-icon>
-                            <document />
-                        </el-icon>
-                        <template #title>Navigator Three</template>
-                    </el-menu-item>
-                    <el-menu-item index="4">
-                        <el-icon>
-                            <setting />
-                        </el-icon>
-                        <template #title>Navigator Four</template>
-                    </el-menu-item>
-                </el-menu>
+            <el-aside id="aside">
+                <Menu :isCollapse="isCollapse"></Menu>
             </el-aside>
             <el-container>
                 <el-header id="header">
-                    <el-page-header :icon="null">
-                        <template #content>
-                            <div class="flex items-center">
-                                <el-avatar :size="32" class="mr-3"
-                                    src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
-                                <span class="text-large font-600 mr-3"> Title </span>
-                                <span class="text-sm mr-2" style="color: var(--el-text-color-regular)">
-                                    Sub title
-                                </span>
-                                <el-tag>Default</el-tag>
+                    <el-page-header>
+                        <template #icon>
+                            <div class="isCollapse" @click="isCollapse = !isCollapse"
+                                style="width: 51px; height: 51px;display: flex;justify-content: center;align-items: center;">
+                                <svg class="is-active hamburger" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" data-v-4e7211d9="">
+                                    <path
+                                        d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM142.4 642.1L298.7 519a8.84 8.84 0 0 0 0-13.9L142.4 381.9c-5.8-4.6-14.4-.5-14.4 6.9v246.3a8.9 8.9 0 0 0 14.4 7z"
+                                        data-v-4e7211d9=""></path>
+                                </svg>
                             </div>
+                        </template>
+                        <template #title>
+                            <a href="https://github.com/naVuppe/vue_Eula" target="_blank">my github</a>
+                        </template>
+                        <template #content>
+                            <el-breadcrumb separator="/">
+                                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+                                <el-breadcrumb-item><a href="/">这页</a></el-breadcrumb-item>
+                                <el-breadcrumb-item>那页</el-breadcrumb-item>
+                            </el-breadcrumb>
                         </template>
                         <template #extra>
                             <div class="flex items-center">
+                                <fullscreen-outlined />
                                 <el-button>Print</el-button>
                                 <el-button type="primary" class="ml-2">Edit</el-button>
+                                <el-avatar :size="32" class="mr-3"
+                                    src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
                             </div>
                         </template>
                     </el-page-header>
@@ -105,20 +65,29 @@ const handleClose = (key: string, keyPath: string[]) => {
     #aside {
         background-color: #ffc0cb;
         height: 100%;
+        width: v-bind(menuWidth + 'px');
+        min-width: 51px;
+        max-width: 321px;
     }
 
     #header {
         background-color: #f2f5f6;
         max-height: 51px;
+        min-width: 570px;
+        padding-left: 0px;
+        overflow: hidden;
     }
 
     #main {
         background-color: #00bfff;
+        min-width: 570px;
     }
 }
 
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-    height: 90%;
-    width: 100%;
+.el-menu-vertical-demo {
+    height: 100%;
 }
-</style>
+
+.isCollapse:hover {
+    background-color: rgba(123, 123, 123, 0.25);
+}</style>

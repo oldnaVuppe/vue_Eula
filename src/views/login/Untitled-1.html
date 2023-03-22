@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 300px;
+            background: #ccc;
+            position: absolute;
+        }
+
+        .el-card {
+            width: 600px;
+            height: 300px;
+            background: #d42121;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="el-card">
+
+        </div>
+    </div>
+    <script>
+        // const box = document.querySelector('.box');
+
+        // // 给元素绑定 mousedown 事件
+        // box.addEventListener('mousedown', function (e) {
+        //     // 记录鼠标在元素内的偏移量
+        //     const disX = e.clientX - box.offsetLeft;
+        //     const disY = e.clientY - box.offsetTop;
+
+        //     // 给 document 绑定 mousemove 事件
+        //     document.addEventListener('mousemove', moveBox);
+
+        //     // 给 document 绑定 mouseup 事件
+        //     document.addEventListener('mouseup', function () {
+        //         // 取消拖拽
+        //         document.removeEventListener('mousemove', moveBox);
+        //     });
+
+        //     // 定义拖拽函数
+        //     function moveBox (e) {
+        //         // 计算元素的位置
+        //         const left = e.clientX - disX;
+        //         const top = e.clientY - disY;
+
+        //         // 判断元素是否超出视口
+        //         const isLeftInViewport = left >= 0;
+        //         const isTopInViewport = top >= 0;
+        //         const isRightInViewport = left + box.offsetWidth <= window.innerWidth;
+        //         const isBottomInViewport = top + box.offsetHeight <= window.innerHeight;
+
+        //         // 如果元素没有超出视口，更新元素的位置
+        //         if (isLeftInViewport && isTopInViewport && isRightInViewport && isBottomInViewport) {
+        //             box.style.left = left + 'px';
+        //             box.style.top = top + 'px';
+        //         }
+        //     }
+        // });
+        
+        const box = document.querySelector('.box');
+
+        box.addEventListener('mousedown', (e) => {
+            const ract = document.querySelector('.box')?.getBoundingClientRect();
+
+            // 判断盒子和视口的距离，不能小于0
+
+
+            // 判断鼠标的位置在不在box的中间部分
+            const disX = e.clientX - ract.left;
+            const disY = e.clientY - ract.top;
+            if (disX > 120 && disX < 550 && disY > 90 && disY < 170) {
+                console.log('在中间');
+                // 移除点击事件
+                box.removeEventListener('mousedown', (e) => { });
+                return;
+            } else {
+                console.log('不在中间');
+            }
+            // 鼠标到元素边距
+            // console.log(disX, disY);
+
+            const move = (e) => {
+                const ract = document.querySelector('.box')?.getBoundingClientRect();
+                // console.log(ract);
+                // 元素怎么在视口内拖拽移动，但是不能超出视口
+
+                if(ract.left > 0 && ract.top > 0 && ract.right < window.innerWidth - 1 && ract.bottom < window.innerHeight - 1){
+                    box.style.left = e.clientX - disX + 'px';
+                    box.style.top = e.clientY - disY + 'px';
+                }
+                if(ract.left <= 0){
+                    console.log(ract.left);
+                    ract.left = 0
+                    console.log(ract.left);
+                    return ract.left += 13
+                }
+                if(ract.top <= 0){
+                    ract.top = 0
+                    console.log(ract.left);
+                }
+                if(ract.right >= window.innerWidth){
+                    ract.right = window.innerWidth
+                    console.log(ract.left);
+                }
+                if(ract.bottom >= window.innerHeight){
+                    ract.bottom = window.innerHeight
+                    console.log(ract.left);
+                }
+                // if (ract.left > 0 && ract.top > 0 && ract.right < window.innerWidth - 1 && ract.bottom < window.innerHeight - 1) {
+                // } else {
+                //     console.log('再动就出去了🥵🥵🥵');
+                //     console.log(ract, disX, disY);
+                //     box.style.left = e.clientX - disX + 'px';
+                //     box.style.top = e.clientY - disY + 'px';
+                    // box.style.left = e.clientX + disX + 'px';
+                    // box.style.top = e.clientY + disX + 'px';
+                    // if(ract.left <= 0) {
+                    //     console.log(111);
+                    //     box.style.left = disX + 'px';
+                    // }
+                    // if (ract.left >= 0 || ract.top >= 0 || ract.right <= window.innerWidth - 1 || ract.bottom <= window.innerHeight - 1) {
+                    //     console.log(e.clientX , disX);
+                    //     box.style.left = e.clientX  + 'px';
+                    //     box.style.top = e.clientY  + 'px';
+                    // }
+                // }
+            }
+            box.addEventListener('mousemove', move);
+
+            box.addEventListener('mouseup', (e) => {
+                box.removeEventListener('mousemove', move);
+            });
+            box.addEventListener('mouseleave', (e) => {
+                box.removeEventListener('mousemove', move);
+            });
+        }, false);
+
+    </script>
+</body>
+
+</html>

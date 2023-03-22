@@ -1,7 +1,6 @@
 import axios from "axios";
-
 const request = axios.create({
-    baseURL: "https://dog.ceo/api/", // url = base url + request url
+    baseURL: "http://www.ashen.ink:10500/", // url = base url + request url
     // 超时时间 单位是ms，这里设置了3s的超时时间
     timeout: 3000,
 });

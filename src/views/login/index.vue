@@ -156,8 +156,8 @@ onMounted(() => {
             <source src="./../../assets" type="video/mp4" />
         </video> -->
         <el-tooltip class="elTooltip" content="拖拉" effect="light" placement="right" :disabled="showElTooltip">
-            <div class="box" v-if="showLogin">
-                <el-card style="{{  'left': rect.x; 'right':rect.y  }}" class="el-card" header="" v-if="showLogin"
+            <div class="box" v-show="showLogin">
+                <el-card style="{{  'left': rect.x; 'right':rect.y  }}" class="el-card" header="" v-show="showLogin"
                     @selectstart="($event: Event) => $event.preventDefault()">
                     <el-icon class="closeBold" @click="showLogin = false">
                         <CloseBold />
