@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, Ref, onMounted, computed } from 'vue';
+import { Eleme } from '@element-plus/icons-vue'
 import { login } from './../../api/login';
 import router from './../../router';
 
@@ -31,45 +32,63 @@ const open = () => {
 // 定义表单ref
 const rulesRef: Ref = ref(null);
 
-const onSubmit = () => {
+// 定义登录按钮状态
+interface ILoading {
+    delay: number
+}
+const iconLoading = ref<boolean | ILoading>(false);
+const loginornot = ref('登录');
+
+const onSubmit = (e: Event) => {
     rulesRef.value.validate(async (valid: any) => {
+        console.log('表单验证通过');
+
+        // 给标签添加属性
+        iconLoading.value = { delay: 1000 };
+        loginornot.value = '登录中...';
+        setTimeout(() => {
+            iconLoading.value = false;
+            loginornot.value = '登录';
+        }, 3000);
+
         if (valid) {
             // 前端不能直接判断，要给后端发送请求（mock），判断是否正确
             /* // if (form.username == '18384518552' && form.password == '990223') {
             //     localStorage.setItem('vue_lol', JSON.stringify(form));
             //     ElMessage.success('登录成功');
             //     const res = await login({ username: form.username, password: form.password });
-
+ 
             //     console.log(res);
             //     // 跳转到首页
             //     await nextTick();
             //     // window.open('https://www.douyu.com/42666', '_self');
-
+ 
             // } else {
             //     ElMessage.error('登录失败');
             //     console.log('登录失败');
             // } */
-            const res = await login({ username: form.username, password: form.password });
-            setTimeout(() => {
-                console.log('setTimeout');
-            }, 1000)
-            console.log('mock返回数据', res.data);
-            if (res.data.code === 200) {
-                console.log(res.data.message);
-                // localStorage.setItem('vue_lol', JSON.stringify(form));
-                // 跳转到首页
-                router.push('/');
+            setTimeout(async () => {
+                const res = await login({ username: form.username, password: form.password });
+                console.log('mock返回数据', res.data);
+                if (res.data.code === 200) {
+                    console.log(res.data.message);
+                    // localStorage.setItem('vue_lol', JSON.stringify(form));
+                    // 跳转到首页
+                    router.push('/');
+                    // 成功后移除loading
 
-                // router.push('');
-                // router.replace('/');
+                    // router.push('');
+                    // router.replace('/');
 
-                // 用用全局状态管理
-                // Vue1.mutations.increment(Vue1.state, res.data.token);
-            } else {
-                console.log(res.data.message);
-            }
+                    // 用用全局状态管理
+                    // Vue1.mutations.increment(Vue1.state, res.data.token);
+                } else {
+                    console.log(res.data.message);
+                    return new Error('表单验证失败');
+                }
+            }, 2500)
         } else {
-            return false;
+            return
         }
     });
 };
@@ -90,14 +109,6 @@ const showElTooltip = ref(false);
 onMounted(() => {
     const box: any = document.querySelector('.box');
     const mouseover = (e: Event) => {
-        // setTimeout(() => {
-        //     const video = document.querySelector('video') as HTMLVideoElement;
-        //     if (video.paused) {
-        //         document.querySelector('.bgi')?.removeEventListener('mouseover', mouseover);
-        //         video.muted = false;
-        //         video.play();
-        //     }
-        // }, 500);
         setTimeout(() => {
             document.querySelector('.el-card')?.removeEventListener('mouseover', mouseover);
             showElTooltip.value = true;
@@ -150,11 +161,11 @@ onMounted(() => {
     <button class="loginBtn" @click="showLogin = !showLogin">登录</button>
     <div class="content">
         <!-- <div class="bgi">
-                            <img src="./../../assets/水调歌头.jpg" alt="">
-                       </div> -->
+                                                    <img src="./../../assets/水调歌头.jpg" alt="">
+                                               </div> -->
         <!-- <video id="v1" autoplay loop muted style="">
-            <source src="./../../assets" type="video/mp4" />
-        </video> -->
+                                    <source src="./../../assets" type="video/mp4" />
+                                </video> -->
         <el-tooltip class="elTooltip" content="拖拉" effect="light" placement="right" :disabled="showElTooltip">
             <div class="box" v-show="showLogin">
                 <el-card style="{{  'left': rect.x; 'right':rect.y  }}" class="el-card" header="" v-show="showLogin"
@@ -175,9 +186,15 @@ onMounted(() => {
                             <el-input v-model="form.password" placeholder="请输入密码" show-password />
                         </el-form-item>
                         <el-button @click="open" style="opacity: 0.76;">注入</el-button>
-                        <!-- <el-button type="success">清空</el-button> -->
-                        <el-button size="medium" type="primary" @click="onSubmit"
-                            style="margin-left: 38%;width: 50%;opacity: 0.76;">登录</el-button>
+                        <el-button size="medium" type="primary" @click="onSubmit" :loading-icon="Eleme" id="login"
+                            :loading="iconLoading" style="margin-left: 37%;width: 50%;opacity: 0.76;">{{ loginornot
+                            }}</el-button>
+                        <!-- <a-button type="primary" :loading="iconLoading" @click="enterIconLoading">
+                                    <template #icon>
+                                        <PoweroffOutlined />
+                                    </template>
+                                    登录
+                                </a-button> -->
                     </el-form>
                 </el-card>
             </div>

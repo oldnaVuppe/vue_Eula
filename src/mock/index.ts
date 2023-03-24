@@ -3,7 +3,7 @@ import Mock from "mockjs";
 // 引入其他的mock文件
 import "./menu.ts";
 Mock.setup({
-  timeout: "1000-2000", // 设置相应时间
+  timeout: "0", // 设置相应时间
 });
 // 2. 引入mock数据
 Mock.mock("http://localhost:10500/api/login",({ body, ...data }): {

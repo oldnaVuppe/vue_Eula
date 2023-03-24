@@ -3,19 +3,22 @@ import Menu from './Menu/index.vue'
 import { ref } from 'vue'
 const isCollapse = ref(false)
 const menuWidth = ref(0)
+const isCollapseFn = () => {
+    isCollapse.value = !isCollapse.value
+}
 </script>
 
 <template>
     <div class="common-layout">
         <el-container class="container">
             <el-aside id="aside">
-                <Menu :isCollapse="isCollapse"></Menu>
+                <Menu class="menu" :isCollapse="isCollapse"></Menu>
             </el-aside>
-            <el-container>
+            <el-container class="container-right" :class="isCollapse ? 'moveleft' : 'moveright'">
                 <el-header id="header">
                     <el-page-header>
                         <template #icon>
-                            <div class="isCollapse" @click="isCollapse = !isCollapse"
+                            <div class="isCollapse" @click="isCollapseFn"
                                 style="width: 51px; height: 51px;display: flex;justify-content: center;align-items: center;">
                                 <svg class="is-active hamburger" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" data-v-4e7211d9="">
@@ -32,7 +35,9 @@ const menuWidth = ref(0)
                             <el-breadcrumb separator="/">
                                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
                                 <el-breadcrumb-item><a href="/">这页</a></el-breadcrumb-item>
-                                <el-breadcrumb-item>那页</el-breadcrumb-item>
+                                <el-breadcrumb-item>
+                                    那页
+                                </el-breadcrumb-item>
                             </el-breadcrumb>
                         </template>
                         <template #extra>
@@ -42,6 +47,7 @@ const menuWidth = ref(0)
                                 <el-button type="primary" class="ml-2">Edit</el-button>
                                 <el-avatar :size="32" class="mr-3"
                                     src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+                                    <step-forward-outlined />
                             </div>
                         </template>
                     </el-page-header>
@@ -65,9 +71,9 @@ const menuWidth = ref(0)
     #aside {
         background-color: #ffc0cb;
         height: 100%;
+        max-width: 183px !important;
         width: v-bind(menuWidth + 'px');
-        min-width: 51px;
-        max-width: 321px;
+        overflow: hidden;
     }
 
     #header {
@@ -81,13 +87,18 @@ const menuWidth = ref(0)
     #main {
         background-color: #00bfff;
         min-width: 570px;
+        z-index: 1001;
     }
 }
 
 .el-menu-vertical-demo {
     height: 100%;
 }
-
 .isCollapse:hover {
     background-color: rgba(123, 123, 123, 0.25);
-}</style>
+}
+.el-menu-vertical-demo{
+    border: 0;
+}
+
+</style>

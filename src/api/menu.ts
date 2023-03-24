@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-export function getMenuList() {
+export const getMenuList = function() {
     return request({
         url: "/menu",
         method: "get",
     });
-}
+};
