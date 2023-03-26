@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "@element-plus/icons-vue": "^2.1.0",
+    "@vue/compiler-sfc": "^3.2.47",
     "ant-design-vue": "^3.2.15",
     "axios": "^0.24.0",
     "element-plus": "^2.3.1",

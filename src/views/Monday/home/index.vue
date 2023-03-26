@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import router from '../../router';
+import router from './../../../router';
 const goLayout = () => {
     router.push('/layout/home');
 };
@@ -24,9 +24,9 @@ const goLayout = () => {
                 <div id="iqke9" class="col iqke9_global">
                     <div style="cursor: pointer;" id="ip1qzo" @click="goLayout">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png">
+                            <source srcset="./../../../assets/321.png">
                             <source srcset="" type="image/png"><img data-srcsets="" data-lazy-srcsets="" id="i8emn"
-                                src="./../../assets/321.png" width="2048" height="737">
+                                src="./../../../assets/321.png" width="2048" height="737">
                         </picture>
                     </div>
                     <div id="ikm2v">Special 50% Off Discount on Now. Limited Time.&nbsp;</div>
@@ -40,9 +40,9 @@ const goLayout = () => {
                         <div id="ihb2ka">This Simple Device Will Revolutionize Your Approach to Fitness</div>
                         <div id="i8ealn" class="i8ealn_global">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
+                                <source srcset="./../../../assets/321.png" type="image/webp">
                                 <source srcset="" type="image/png"><img data-srcsets="" data-lazy-srcsets="" id="imu4lo"
-                                    src="./../../assets/321.png" width="69" height="13">
+                                    src="./../../../assets/321.png" width="69" height="13">
                             </picture>
                             <div id="itlgf2">Based on 676 reviews</div>
                         </div>
@@ -56,12 +56,12 @@ const goLayout = () => {
                                     more precise vital sign readings and accurate real-time fitness data</div>
                                 <div id="i2p5ui-2"></div>
                                 <div id="i4a9m4"></div>
-                            </div><a href="./../../assets/321.png" ctr-type-link="external" id="ia2fok" call-to-action=""
+                            </div><a href="./../../../assets/321.png" ctr-type-link="external" id="ia2fok" call-to-action=""
                                 cta-id="ia2fok" data-title="KoreTrak Gen2" click-id="47abd434-fe02-4b40-af1d-96e7e859b372">
                                 <picture class="ctr-generated">
-                                    <source srcset="./../../assets/321.png" type="image/webp">
-                                    <source srcset="./../../assets/321.png" type="image/png"><img data-srcsets=""
-                                        data-lazy-srcsets="" id="iqnph8" src="./../../assets/321.png" width="25"
+                                    <source srcset="./../../../assets/321.png" type="image/webp">
+                                    <source srcset="./../../../assets/321.png" type="image/png"><img data-srcsets=""
+                                        data-lazy-srcsets="" id="iqnph8" src="./../../../assets/321.png" width="25"
                                         height="25">
                                 </picture>
                                 <div id="i7ojoj">Order Kore 2.0 Now</div>
@@ -70,8 +70,8 @@ const goLayout = () => {
                     </div>
                     <div id="ictlhq" class="ictlhq_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="igorvy" class="sec1-img" src="./../../assets/321.png"
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="igorvy" class="sec1-img" src="./../../../assets/321.png"
                                 width="638" height="677">
                         </picture>
                     </div>
@@ -84,8 +84,8 @@ const goLayout = () => {
                     <div id="ihfssm" class="ihfssm_global">
                         <div id="ij2q6" class="ij2q6_global">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
-                                <source type="image/png"><img id="icq3h" src="./../../assets/321.png" width="36"
+                                <source srcset="./../../../assets/321.png" type="image/webp">
+                                <source type="image/png"><img id="icq3h" src="./../../../assets/321.png" width="36"
                                     height="31">
                             </picture>
                             <div id="iog0h">Real Time<div id="ioguw3">Exercise Stats</div>
@@ -93,8 +93,8 @@ const goLayout = () => {
                         </div>
                         <div id="irw7g" class="irw7g_global">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
-                                <source type="image/png"><img id="inw2g" src="./../../assets/321.png" width="28"
+                                <source srcset="./../../../assets/321.png" type="image/webp">
+                                <source type="image/png"><img id="inw2g" src="./../../../assets/321.png" width="28"
                                     height="37">
                             </picture>
                             <div id="i4tg4">Sweat and<div id="irkkwf">Splash Resistant&nbsp;</div>
@@ -104,8 +104,8 @@ const goLayout = () => {
                     <div id="ini12c" class="ini12c_global">
                         <div id="i0xps" class="i0xps_global">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
-                                <source type="image/png"><img id="i6hpp" src="./../../assets/321.png" width="33"
+                                <source srcset="./../../../assets/321.png" type="image/webp">
+                                <source type="image/png"><img id="i6hpp" src="./../../../assets/321.png" width="33"
                                     height="36">
                             </picture>
                             <div id="ivomt">Touch Screen<div id="iksdqv">&nbsp;Navigation</div>
@@ -113,8 +113,8 @@ const goLayout = () => {
                         </div>
                         <div id="it81e" class="it81e_global">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
-                                <source type="image/png"><img id="i1zft" src="./../../assets/321.png" width="40"
+                                <source srcset="./../../../assets/321.png" type="image/webp">
+                                <source type="image/png"><img id="i1zft" src="./../../../assets/321.png" width="40"
                                     height="23">
                             </picture>
                             <div id="idv27">Up to a week<div id="ilcskc">of battery life</div>
@@ -133,8 +133,8 @@ const goLayout = () => {
                 <div id="i4mah" class="col i4mah_global">
                     <div id="in1l9" class="in1l9_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="imanu" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="imanu" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="ijbuu">Health Tracking</div>
                         <div id="iv75h">Track important health metrics like heart rate, body temperature and blood
@@ -142,8 +142,8 @@ const goLayout = () => {
                     </div>
                     <div id="isnlpn" class="isnlpn_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="ic2pwq" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="ic2pwq" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="i9r9ca">Fitness Tracking</div>
                         <div id="ill988">Keep crushing your fitness goals faster with built-in multi-sport modes and
@@ -151,8 +151,8 @@ const goLayout = () => {
                     </div>
                     <div id="i8haiq" class="i8haiq_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="i3fvbg" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="i3fvbg" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="ipdwe6">You’ll Be More Engaged</div>
                         <div id="i5lp6n">Schedule daily vital sign readings or inactivity alerts to remind you to get up
@@ -162,8 +162,8 @@ const goLayout = () => {
                 <div id="i2s9nk" class="col i2s9nk_global">
                     <div id="iwqfnl" class="iwqfnl_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="ibfxdi" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="ibfxdi" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="if6inz">Improve Your Sleep</div>
                         <div id="i10xzn">Analyze your sleep patterns to get a better night’s rest. Feel more alert and
@@ -171,8 +171,8 @@ const goLayout = () => {
                     </div>
                     <div id="ihazw8" class="ihazw8_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="ii6fzw" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="ii6fzw" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="ihzyyj">Alerts At a Glance</div>
                         <div id="ium466">Call, text message, and calendar vibration alerts let you focus on the task at
@@ -180,8 +180,8 @@ const goLayout = () => {
                     </div>
                     <div id="ia7mw8" class="ia7mw8_global">
                         <picture class="ctr-generated">
-                            <source srcset="./../../assets/321.png" type="image/webp">
-                            <source type="image/png"><img id="iajgpj" src="./../../assets/321.png" width="300" height="300">
+                            <source srcset="./../../../assets/321.png" type="image/webp">
+                            <source type="image/png"><img id="iajgpj" src="./../../../assets/321.png" width="300" height="300">
                         </picture>
                         <div id="i8muhv">It’s Made for You</div>
                         <div id="isoqzl">Customizable interface, long-lasting battery, and Apple &amp; Android
@@ -219,9 +219,9 @@ const goLayout = () => {
                                                 <div id="icj79w">Works just as well as the expensive models</div>
                                                 <div id="iict32" class="iict32_global">
                                                     <picture class="ctr-generated">
-                                                        <source srcset="./../../assets/321.png" type="image/webp">
+                                                        <source srcset="./../../../assets/321.png" type="image/webp">
                                                         <source type="image/png"><img id="izdxd8"
-                                                            src="./../../assets/321.png" width="173" height="34">
+                                                            src="./../../../assets/321.png" width="173" height="34">
                                                     </picture>
                                                     <div id="iwpnzz">Jem N. -&nbsp;</div><span date-time-locale="en-US"
                                                         date-formatter="{&quot;year&quot;:&quot;numeric&quot;,&quot;month&quot;:&quot;short&quot;,&quot;day&quot;:&quot;2-digit&quot;}"
@@ -233,9 +233,9 @@ const goLayout = () => {
                                                     my Kore 2.0.</div>
                                                 <div id="isg9au" class="isg9au_global">
                                                     <picture class="ctr-generated">
-                                                        <source srcset="./../../assets/321.png" type="image/webp">
+                                                        <source srcset="./../../../assets/321.png" type="image/webp">
                                                         <source type="image/png"><img id="iac8tn"
-                                                            src="./../../assets/321.png" width="20" height="20">
+                                                            src="./../../../assets/321.png" width="20" height="20">
                                                     </picture>
                                                     <div id="iq3i3a">Yes, I recommend this product.</div>
                                                 </div>
@@ -244,9 +244,9 @@ const goLayout = () => {
                                                 <div id="icrknl">Love this thing!</div>
                                                 <div id="ibykxl" class="ibykxl_global">
                                                     <picture class="ctr-generated">
-                                                        <source srcset="./../../assets/321.png" type="image/webp">
+                                                        <source srcset="./../../../assets/321.png" type="image/webp">
                                                         <source type="image/png"><img id="irkovg"
-                                                            src="./../../assets/321.png" width="88" height="16">
+                                                            src="./../../../assets/321.png" width="88" height="16">
                                                     </picture>
                                                     <div id="ir799l">Jorge L. -&nbsp;</div><span date-time-locale="en-US"
                                                         date-formatter="{&quot;year&quot;:&quot;numeric&quot;,&quot;month&quot;:&quot;short&quot;,&quot;day&quot;:&quot;2-digit&quot;}"
@@ -258,9 +258,9 @@ const goLayout = () => {
                                                 </div>
                                                 <div id="iu6ssp" class="iu6ssp_global">
                                                     <picture class="ctr-generated">
-                                                        <source srcset="./../../assets/321.png" type="image/webp">
+                                                        <source srcset="./../../../assets/321.png" type="image/webp">
                                                         <source type="image/png"><img id="ieju4i"
-                                                            src="./../../assets/321.png" width="20" height="20">
+                                                            src="./../../../assets/321.png" width="20" height="20">
                                                     </picture>
                                                     <div id="iz7ki5">Yes, I recommend this product.</div>
                                                 </div>
@@ -278,20 +278,20 @@ const goLayout = () => {
                                     <div id="i27pv7">The Kore 2.0 smartwatch features advanced biometrics sensors to
                                         provide the MOST health and fitness data at the LOWEST price ever!</div>
                                     <div id="ildr0e">Want this already super affordable smart watch at an even MORE
-                                        discounted price?</div><a href="./../../assets/321.png" ctr-type-link="external"
+                                        discounted price?</div><a href="./../../../assets/321.png" ctr-type-link="external"
                                         id="idb4x" call-to-action="" cta-id="idb4x" data-title="KoreTrak Gen2"
                                         click-id="91509975-4b69-4040-b1c1-716191b30bf4">
                                         <picture class="ctr-generated">
-                                            <source srcset="./../../assets/321.png" type="image/webp">
-                                            <source type="image/png"><img id="izctb" src="./../../assets/321.png" width="25"
+                                            <source srcset="./../../../assets/321.png" type="image/webp">
+                                            <source type="image/png"><img id="izctb" src="./../../../assets/321.png" width="25"
                                                 height="25">
                                         </picture>
                                         <div id="isb6p">Learn More</div>
                                     </a>
                                 </div>
                                 <picture class="ctr-generated">
-                                    <source srcset="./../../assets/321.png" type="image/webp">
-                                    <source type="image/png"><img id="i9i6dx" src="./../../assets/321.png" width="465"
+                                    <source srcset="./../../../assets/321.png" type="image/webp">
+                                    <source type="image/png"><img id="i9i6dx" src="./../../../assets/321.png" width="465"
                                         height="424">
                                 </picture>
                             </div>
@@ -309,90 +309,90 @@ const goLayout = () => {
                                 date-formatter="{&quot;year&quot;:&quot;numeric&quot;}" id="imne1r">2022</span>
                             <div id="i725fk">Kore 2.0<span id="ik7e1z">TM</span> | All Rights Reserved.</div>
                             <div id="inbcfh">Built with - <a id="i46x2r" ctr-type-link="external" target="_blank"
-                                    href="./../../assets/321.png">CTRwow.com</a>
+                                    href="./../../../assets/321.png">CTRwow.com</a>
                             </div>
                         </div>
-                        <div id="ihiayg" class="ihiayg_global"><a href="./../../assets/321.png" ctr-type-link="external"
+                        <div id="ihiayg" class="ihiayg_global"><a href="./../../../assets/321.png" ctr-type-link="external"
                                 target="_blank" id="ik63dn">Contact Us</a>
-                            <div id="iu3rwg">|</div><a href="./../../assets/321.png" ctr-type-link="external" id="i15c99"
+                            <div id="iu3rwg">|</div><a href="./../../../assets/321.png" ctr-type-link="external" id="i15c99"
                                 target="popup">Terms and Conditions</a>
                             <div ctrlinkcontentid="i15c99" id="i0n3v6" class="i0n3v6_global"><a
-                                    href="./../../assets/321.png" ctr-type-link="external" id="i15c99" target="popup"></a>
+                                    href="./../../../assets/321.png" ctr-type-link="external" id="i15c99" target="popup"></a>
                                 <div id="izfwbz" class="ctrwow-modal" style="z-index: 1000;"><a
-                                        href="./../../assets/321.png" ctr-type-link="external" id="i15c99"
+                                        href="./../../../assets/321.png" ctr-type-link="external" id="i15c99"
                                         target="popup"></a>
                                     <div id="iu8hcv" class="ctrwow-modal-content iframe-popup"><a
-                                            href="./../../assets/321.png" ctr-type-link="external" id="i15c99"
+                                            href="./../../../assets/321.png" ctr-type-link="external" id="i15c99"
                                             target="popup">
                                             <div id="imoyu6" class="ctrwow-modal-header"><span id="ipnnez"
                                                     class="close js-btn-close">X CLOSE</span></div>
                                         </a>
-                                        <div id="is3ao9" class="ctrwow-modal-body"><a href="./../../assets/321.png"
+                                        <div id="is3ao9" class="ctrwow-modal-body"><a href="./../../../assets/321.png"
                                                 ctr-type-link="external" id="i15c99" target="popup">
                                                 <div id="ihrtkk" class="ctr_modal_iframe">PAGE CONTENT FROM LINK SHOW
                                                     HERE!</div>
-                                            </a><a href="./../../assets/321.png" ctr-type-link="external" id="iippwk"
+                                            </a><a href="./../../../assets/321.png" ctr-type-link="external" id="iippwk"
                                                 class="btn btn-reserve js-btn-close">Xxxxxx Xxxx Xxx</a></div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="imr32i">|</div><a href="./../../assets/321.png" ctr-type-link="external" id="ix2vny"
+                            <div id="imr32i">|</div><a href="./../../../assets/321.png" ctr-type-link="external" id="ix2vny"
                                 target="popup">Privacy Policy</a>
                             <div ctrlinkcontentid="ix2vny" id="iv12er" class="iv12er_global"><a
-                                    href="./../../assets/321.png" ctr-type-link="external" id="ix2vny" target="popup"></a>
+                                    href="./../../../assets/321.png" ctr-type-link="external" id="ix2vny" target="popup"></a>
                                 <div id="i00kl8" class="ctrwow-modal" style="z-index: 1000;"><a
-                                        href="./../../assets/321.png" ctr-type-link="external" id="ix2vny"
+                                        href="./../../../assets/321.png" ctr-type-link="external" id="ix2vny"
                                         target="popup"></a>
                                     <div id="io16qb" class="ctrwow-modal-content iframe-popup"><a
-                                            href="./../../assets/321.png" ctr-type-link="external" id="ix2vny"
+                                            href="./../../../assets/321.png" ctr-type-link="external" id="ix2vny"
                                             target="popup">
                                             <div id="ifjuj9" class="ctrwow-modal-header"><span id="ioipe8"
                                                     class="close js-btn-close">X CLOSE</span></div>
                                         </a>
-                                        <div id="igxx4y" class="ctrwow-modal-body"><a href="./../../assets/321.png"
+                                        <div id="igxx4y" class="ctrwow-modal-body"><a href="./../../../assets/321.png"
                                                 ctr-type-link="external" id="ix2vny" target="popup">
                                                 <div id="i8ovlg" class="ctr_modal_iframe">PAGE CONTENT FROM LINK SHOW
                                                     HERE!</div>
-                                            </a><a href="./../../assets/321.png" ctr-type-link="external" id="i4an2i"
+                                            </a><a href="./../../../assets/321.png" ctr-type-link="external" id="i4an2i"
                                                 class="btn btn-reserve js-btn-close">Xxxxxx Xxxx Xxx</a></div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="i10nit">|</div><a href="./../../assets/321.png" ctr-type-link="external" id="i54hrl"
+                            <div id="i10nit">|</div><a href="./../../../assets/321.png" ctr-type-link="external" id="i54hrl"
                                 target="popup">Affiliate</a>
                             <div ctrlinkcontentid="i54hrl" id="i27iwb" class="i27iwb_global"><a
-                                    href="./../../assets/321.png" ctr-type-link="external" id="i54hrl" target="popup"></a>
+                                    href="./../../../assets/321.png" ctr-type-link="external" id="i54hrl" target="popup"></a>
                                 <div id="itmb8r" class="ctrwow-modal" style="z-index: 1000;"><a
-                                        href="./../../assets/321.png" ctr-type-link="external" id="i54hrl"
+                                        href="./../../../assets/321.png" ctr-type-link="external" id="i54hrl"
                                         target="popup"></a>
                                     <div id="i8cifl" class="ctrwow-modal-content iframe-popup"><a
-                                            href="./../../assets/321.png" ctr-type-link="external" id="i54hrl"
+                                            href="./../../../assets/321.png" ctr-type-link="external" id="i54hrl"
                                             target="popup">
                                             <div id="itlk4z" class="ctrwow-modal-header"><span id="i9s285"
                                                     class="close js-btn-close">X CLOSE</span></div>
                                         </a>
-                                        <div id="i66i9p" class="ctrwow-modal-body"><a href="./../../assets/321.png"
+                                        <div id="i66i9p" class="ctrwow-modal-body"><a href="./../../../assets/321.png"
                                                 ctr-type-link="external" id="i54hrl" target="popup">
                                                 <div id="ik0ca4" class="ctr_modal_iframe">PAGE CONTENT FROM LINK SHOW
                                                     HERE!</div>
-                                            </a><a href="./../../assets/321.png" ctr-type-link="external" id="infrhb"
+                                            </a><a href="./../../../assets/321.png" ctr-type-link="external" id="infrhb"
                                                 class="btn btn-reserve js-btn-close">Xxxxxx Xxxx Xxx</a></div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="iurc0y">|</div><a href="./../../assets/321.png" ctr-type-link="external" id="iak2tj"
+                            <div id="iurc0y">|</div><a href="./../../../assets/321.png" ctr-type-link="external" id="iak2tj"
                                 target="_blank">Manual</a>
                         </div>
                     </div>
                     <div id="i4utaa">Quality Performance Limited, 377 Valley Rd #1123, Clifton, NJ 07013</div>
                     <div id="imzrpa"><a id="irtk0q" ctr-type-link="external" href="tel:+8552194892" data-anim-repeat=""
                             class="animated--hover infinite">855 219 4892</a></div>
-                    <div id="ikp2" class="DMCA_Logo"><a href="./../../assets/321.png" title="DMCA.com Protection Status"
+                    <div id="ikp2" class="DMCA_Logo"><a href="./../../../assets/321.png" title="DMCA.com Protection Status"
                             target="_blank" ctr-type-link="external" id="if9d5k" class="no-tracking">
                             <picture class="ctr-generated">
-                                <source srcset="./../../assets/321.png" type="image/webp">
+                                <source srcset="./../../../assets/321.png" type="image/webp">
                                 <source type="image/png"><img alt="DMCA.com Protection Status" id="ivkhc8"
-                                    src="./../../assets/321.png" width="96" height="16">
+                                    src="./../../../assets/321.png" width="96" height="16">
                             </picture>
                         </a></div>
                 </div>

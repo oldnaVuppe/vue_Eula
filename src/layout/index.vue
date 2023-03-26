@@ -12,6 +12,7 @@ const isCollapseFn = () => {
     <div class="common-layout">
         <el-container class="container">
             <el-aside id="aside">
+                <img src="./../assets/logo_steam.svg" alt="" style="position: fixed;left: 10px;top: 0;width: 183px;height: 50px;padding: 0 0 0 0;  background-color: #fff;">
                 <Menu class="menu" :isCollapse="isCollapse"></Menu>
             </el-aside>
             <el-container class="container-right" :class="isCollapse ? 'moveleft' : 'moveright'">
@@ -69,11 +70,13 @@ const isCollapseFn = () => {
     }
 
     #aside {
-        background-color: #ffc0cb;
+        // background-color: #ffc0cb;
+        background-color: #fff;
         height: 100%;
         max-width: 183px !important;
         width: v-bind(menuWidth + 'px');
         overflow: hidden;
+        padding-top: 50px;
     }
 
     #header {
@@ -82,12 +85,14 @@ const isCollapseFn = () => {
         min-width: 570px;
         padding-left: 0px;
         overflow: hidden;
+        z-index: 1000;
     }
 
     #main {
-        background-color: #00bfff;
+        background-color: rgba(14 + 7, 4 + 4, 20 + 8, 0.03);
         min-width: 570px;
         z-index: 1001;
+        padding: 12px;
     }
 }
 

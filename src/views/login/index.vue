@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref, reactive, Ref, onMounted, computed } from 'vue';
 import { Eleme } from '@element-plus/icons-vue'
 import { login } from './../../api/login';
@@ -74,7 +74,7 @@ const onSubmit = (e: Event) => {
                     console.log(res.data.message);
                     // localStorage.setItem('vue_lol', JSON.stringify(form));
                     // 跳转到首页
-                    router.push('/');
+                    router.push('/index');
                     // 成功后移除loading
 
                     // router.push('');

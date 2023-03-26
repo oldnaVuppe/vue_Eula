@@ -1,20 +1,21 @@
 <script lang="ts" setup >
-import { ref, defineProps, onMounted ,nextTick} from 'vue'
-import {
-    // Document,
-    // Menu as IconMenu,
-    // Location,
-    // Setting,
-    // circleplus
-} from '@element-plus/icons-vue';
+import { ref, defineProps, onMounted, nextTick } from 'vue'
 import { getMenuList } from './../../api/menu'
 import { Menu } from './../../types/menu'
-
-const menuList = ref([])
+import router from './../../router'
+interface MenuProps {
+    id: number;
+    authName: string;
+    path: string;
+    order: number;
+    icon: string;
+    children: MenuProps[];
+}
+const menu = ref([]) as any
 const menuListFn = async () => {
     const res = await getMenuList()
     console.log(res.data.data);
-    menuList.value = res.data.data
+    menu.value = res.data.data
 }
 menuListFn();
 
@@ -31,43 +32,50 @@ const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
 
-const log = (item: any) => {
-    console.log(item.icon);
-}
+// const log = (item: any) => {
+//     console.log(item);
+// }
+// 得到路由
+console.log(router.currentRoute.value);
+const getRouter = ref(router.currentRoute.value.path)
 </script>
 
 <template>
-    <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
-        <el-sub-menu index="1">
+    <el-menu :default-active="getRouter" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
+        @close="handleClose" router>
+        <el-menu-item-group>
+                <el-menu-item index="/index">
+                    <template #title>
+                        <el-icon><SwitchFilled /></el-icon>
+                        <span>ELDEN RING</span>
+                    </template>
+                </el-menu-item>
+            </el-menu-item-group>
+        <el-sub-menu :index="item.id" v-for="item in menu" :key="item.id">
             <template #title>
-                <el-icon><Folder /></el-icon>
-                <span>第一个</span>
+                <el-icon v-html="item.icon"></el-icon>
+                <span>{{ item.authName }}</span>
             </template>
             <el-menu-item-group>
-                <template #title><span>Group One</span></template>
-                <el-menu-item index="1-1">item one</el-menu-item>
-                <el-menu-item index="1-2">item two</el-menu-item>
+                <el-menu-item :index="'/' + item.path + '/' + item0.path" v-for="item0 in item.children">
+                    <el-icon v-html="item0.icon"></el-icon>
+                    <span>{{ item0.authName }}</span>
+                </el-menu-item>
             </el-menu-item-group>
-            <el-menu-item-group title="Group Two">
-                <el-menu-item index="1-3">item three</el-menu-item>
-            </el-menu-item-group>
-            <el-sub-menu index="1-4">
-                <template #title>
-                    <el-icon><Folder /></el-icon>
-                    <span>item four</span>
-                </template>
-                <el-menu-item index="1-4-1">item one</el-menu-item>
-            </el-sub-menu>
         </el-sub-menu>
-        <el-menu-item :index="item.id" v-for="(item, index) in menuList" :key="index">
-            <el-icon v-html="item.icon"></el-icon>
-            <template #title>{{ item.authName }}</template>
-        </el-menu-item>
     </el-menu>
 </template>
 
 <style lang="scss" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 183px;
+    width: 183px;
+}
+
+.el-menu-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    // 溢出用省略号显示
+    
 }
 </style>

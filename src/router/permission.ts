@@ -11,7 +11,7 @@ router.beforeEach((to, from, next) => {
   if (localStorage.getItem("vue_lol")) {
     // 判断是否是登录页
     if (to.path === "/login") {
-      next("/home");
+      next("/index");
       // 如果to是登录页，跳转到首页
     } else {
       // 如果不是登录页，判断是否有权限
