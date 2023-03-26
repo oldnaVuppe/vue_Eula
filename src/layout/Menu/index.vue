@@ -25,12 +25,6 @@ const props = defineProps({
         default: true
     }
 })
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
 
 // const log = (item: any) => {
 //     console.log(item);
@@ -41,8 +35,7 @@ const getRouter = ref(router.currentRoute.value.path)
 </script>
 
 <template>
-    <el-menu :default-active="getRouter" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
-        @close="handleClose" router>
+    <el-menu :default-active="getRouter" class="el-menu-vertical-demo" :collapse="isCollapse" router>
         <el-menu-item-group>
                 <el-menu-item index="/index">
                     <template #title>
@@ -71,11 +64,9 @@ const getRouter = ref(router.currentRoute.value.path)
     width: 183px;
 }
 
-.el-menu-item {
+.el-menu-item span{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    // 溢出用省略号显示
-    
 }
 </style>

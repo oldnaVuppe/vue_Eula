@@ -1,15 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { reactive, ref, watch, computed, watchEffect } from 'vue';
 import { ElMessage } from 'element-plus';
+
 /*============❌❌   ✔✔✔===========*/
-let list = reactive([])
-let showDialog = ref(false)
-let form = reactive({
+let list: any = reactive([])
+let showDialog: any = ref(false)
+let form: any = reactive({
     text: '',
     time: null
 })
-let selected = ref(null)
-const formRef = ref(null)
+let selected: any = ref(null)
+const formRef: any = ref(null)
 const rules = {
     text: [
         {
@@ -37,18 +38,18 @@ const dilogTitle = computed(() => {
     }
 // },5000)
 
-const remove = function (index) {
+const remove = function (index: any) {
     // 删除
     list.splice(index, 1)
 }
-const update = function (row, index) {
+const update = function (row: any, index: any) {
     // 修改
     showDialog.value = true
     selected.value = index
     form.text = row.text;
     form.time = row.time;
 }
-const confirm = function (isAdd) {
+const confirm = function (isAdd: any) {
     // 添加/修改
     formRef.value.validate().then(() => {
         if (isAdd) {
@@ -62,7 +63,7 @@ const confirm = function (isAdd) {
         }
         showDialog.value = false
         formRef.value.resetFields() // 重置表单
-    }).catch((err) => {
+    }).catch((err: any) => {
         // 校验失败
         console.log(err);
         ElMessage({ message: '请自觉', type: 'warning' })
@@ -71,9 +72,9 @@ const confirm = function (isAdd) {
 
 watchEffect(() => {
     try {
-        const data = JSON.parse(localStorage.getItem('list_vue3_vt')) || []
+        const data = JSON.parse(localStorage.getItem('list_vue3_vt') as any) || []
         // console.log('读取的缓存', data);
-        list = reactive(data.map(el => {
+        list = reactive(data.map((el: any) => {
             return ({ ...el, time: new Date(el.time) })
         }))
     } catch (err) {
@@ -86,37 +87,37 @@ watch(list, () => {
     localStorage.setItem('list_vue3_vt', JSON.stringify(list))
 })
 /*============❌❌ 虚拟列表  ✔✔✔===========*/
-const columns = [
-    // key 用于标识这一列
-    { title:"内容", key:"text" },
-    { title:"日期", key:"time" },
-    { title:"操作", key:"index" }
-]
+// const columns = [
+//     // key 用于标识这一列
+//     { title:"内容", key:"text" },
+//     { title:"日期", key:"time" },
+//     { title:"操作", key:"index" }
+// ]
 
 /*============❌❌ 拖拉拽  ✔✔✔===========*/
-const dragstart = (e, oldIndex) => {
-    e.dataTransfer.setData('text/plain', oldIndex )
-}
-const dragover = (e, index) => {
-    e.preventDefault();
-    // console.log('dragover', index);
-}
-const drop = (e, newIndex) => {
-    e.preventDefault();
-    let oldIndex = Number(e.dataTransfer.getData('text/plain'))
-    console.log('拖拉拽=> 从', oldIndex,'到', newIndex);
-    if (oldIndex > newIndex) {
-        // 往前拖
-        // let temp = list[oldIndex]
-        // list.splice(oldIndex, 1)
-        // list.splice(newIndex, 0, temp)
-        list.splice(newIndex, 0, list[oldIndex])
-        list.splice(oldIndex + 1, 1)
-    } else {
-        list.splice(newIndex + 1, 0, list[oldIndex])
-        list.splice(oldIndex, 1)
-    }
-}
+// const dragstart = (e, oldIndex) => {
+//     e.dataTransfer.setData('text/plain', oldIndex )
+// }
+// const dragover = (e, index) => {
+//     e.preventDefault();
+//     // console.log('dragover', index);
+// }
+// const drop = (e, newIndex) => {
+//     e.preventDefault();
+//     let oldIndex = Number(e.dataTransfer.getData('text/plain'))
+//     console.log('拖拉拽=> 从', oldIndex,'到', newIndex);
+//     if (oldIndex > newIndex) {
+//         // 往前拖
+//         // let temp = list[oldIndex]
+//         // list.splice(oldIndex, 1)
+//         // list.splice(newIndex, 0, temp)
+//         list.splice(newIndex, 0, list[oldIndex])
+//         list.splice(oldIndex + 1, 1)
+//     } else {
+//         list.splice(newIndex + 1, 0, list[oldIndex])
+//         list.splice(oldIndex, 1)
+//     }
+// }
 </script>
 
 
@@ -125,7 +126,7 @@ const drop = (e, newIndex) => {
     <!-- table列表 -->
     <!-- <div class="container"> -->
     <!-- 虚拟列表 -->
-    <el-table-v2 :columns="columns" :data="list" :width="800" :height="300">
+    <!-- <el-table-v2 :columns="columns" :data="list" :width="800" :height="300">
         <template #row="{ columns, rowIndex, rowData }">
             <div 
             style="display: flex;width: 100%;justify-content: space-around;align-items: center;"
@@ -146,9 +147,9 @@ const drop = (e, newIndex) => {
                 </div>
             </div>
         </template>
-    </el-table-v2>
+    </el-table-v2> -->
     <!-- 普通列表 -->
-    <!-- <el-table :data="list">
+    <el-table :data="list">
         <el-table-column label="内容" prop="text"></el-table-column>
         <el-table-column label="时间">
             <template #default="{ row }">
@@ -161,10 +162,10 @@ const drop = (e, newIndex) => {
                 <el-button type="primary" @click="update(row, $index)">修改</el-button>
             </template>
         </el-table-column>
-    </el-table> -->
+    </el-table>
 
     <!-- 弹出框 -->
-    <el-dialog :title="dilogTitle" v-model="showDialog" @scroll="onscroll" @click="onClick">
+    <el-dialog :title="dilogTitle" v-model="showDialog">
         <el-form :model="form" :rules="rules" ref="formRef">
             <el-form-item label="内容：" prop="text">
                 <el-input v-model="form.text" placeholder="请输入内容"></el-input>
