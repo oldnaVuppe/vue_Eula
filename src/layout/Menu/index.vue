@@ -2,7 +2,8 @@
 import { ref, defineProps, onMounted, nextTick } from 'vue'
 import { getMenuList } from './../../api/menu'
 import { Menu } from './../../types/menu'
-import router from './../../router'
+// import router from './../../router'
+import { useRouter } from 'vue-router'
 interface MenuProps {
     id: number;
     authName: string;
@@ -29,7 +30,8 @@ const props = defineProps({
 // const log = (item: any) => {
 //     console.log(item);
 // }
-// 得到路由
+// 得到路由参数
+const router = useRouter()
 console.log(router.currentRoute.value);
 const getRouter = ref(router.currentRoute.value.path)
 </script>
