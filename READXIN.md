@@ -294,3 +294,110 @@ use(Antd)
 // 使用icon
 npm install --save @ant-design/icons-vue
 ```
+
+## electron 使用
+
+```tsx
+https://blog.csdn.net/qq1195566313/article/details/126063804?spm=1001.2014.3001.5501
+npm i electron -D
+npm install vite-plugin-electron -D
+
+// 第一种
+vite.config.ts
+import electron from "vite-plugin-electron";
+plugins: [vue(),
+    electron({
+      entry: "electron/index.ts",
+    }),
+    ...
+// 根目录
+electron/index.ts
+import { app, BrowserWindow } from "electron";
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
+  console.log(process.env);
+
+  win.loadURL(`${process.env['VITE_DEV_SERVER_URL']}`);
+};
+app.whenReady().then(createWindow);
+
+"main": "dist-electron/index.js",
+
+取消模块化
+// "type": "module"
+
+// 打包
+npm install electron-builder -D
+
+"build": "vue-tsc --noEmit && vite build  &&  electron-builder",
+
+// 设置环境变量
+npm install cross-env
+"dev": "cross-env NODE_ENV=development vite",
+
+if (process.env.NODE_ENV !== 'development') {
+
+  
+// 打完包app.isPackaged的值为true
+if (app.isPackaged) {
+  win.loadFile('./../dist/index.html');
+} else {
+  win.loadURL(`${process.env['VITE_DEV_SERVER_URL']}`);
+}
+
+package.json配置"build"
+  "build": {
+    
+  }
+}
+
+// 第二种
+vite.config.ts
+import electron from "vite-plugin-electron";
+plugins: [vue(),
+    electron({
+      entry: "main.ts",
+    }),
+    ...
+// 根目录
+main.ts
+import { app, BrowserWindow } from "electron";
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
+  console.log(process.env);
+
+  win.loadURL(`${process.env['VITE_DEV_SERVER_URL']}`);
+};
+app.whenReady().then(createWindow);
+
+"main": "dist-electron/main.js",
+
+取消模块化
+// "type": "module"
+
+// 打包
+npm install electron-builder -D
+```
+
+## pinia
+
+```tsx
+npm install pinia -S
+import { createPinia } from 'pinia'
+const store = createPinia()
+.use(store)
+```

@@ -2,13 +2,15 @@
   "name": "eula",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "main": "main.cjs",
+  "type": "commonjs",
+  "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build && electron-builder",
     "preview": "vite preview",
-    "start": "electron ."
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "start": "vue-cli-service electron ."
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
@@ -29,6 +31,7 @@
     "@typescript-eslint/parser": "^5.55.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "electron": "^23.2.0",
+    "electron-builder": "^23.6.0",
     "eslint": "^8.36.0",
     "eslint-plugin-vue": "^9.9.0",
     "sass": "^1.59.3",
@@ -36,6 +39,33 @@
     "unplugin-auto-import": "^0.15.1",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.1.0",
+    "vite-plugin-electron": "^0.11.1",
+    "vue-cli-plugin-electron-builder": "^1.4.6",
     "vue-tsc": "^1.0.24"
+  },
+  "build": {
+    "appId": "com.electron.eula",
+    "productName": "eula",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    }
   }
 }

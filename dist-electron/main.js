@@ -1,0 +1,1 @@
+"use strict";const n=require("electron"),o=()=>{const e=new n.BrowserWindow({width:1200,height:720,webPreferences:{nodeIntegration:!0,contextIsolation:!1}});console.log(process.env),process.env.NODE_ENV!=="development"?e.loadFile("./index.html"):e.loadURL(`${process.env.VITE_DEV_SERVER_URL}`)};n.app.whenReady().then(o);

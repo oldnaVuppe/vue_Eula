@@ -77,6 +77,21 @@ const routes = createRouter({
           path: "test1",
           component: () => import("./../views/Wednesday/test1.vue"),
         },
+        {
+          path: "vip",
+          component: () => import("./../views/Wednesday/vip/index.vue"),
+          // redirect: "",
+          children: [
+            {
+              path: "vip1",
+              component: () => import("./../views/Wednesday/vip/vip.vue"),
+            },
+            {
+              path: "test",
+              component: () => import("./../views/Wednesday/vip/test.vue"),
+            }
+          ]
+        }
       ],
     },
     {

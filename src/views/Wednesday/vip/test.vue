@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>周三</div>
+    <div>zhanwei</div>
 </template>
 
 <style lang="scss" scoped></style>

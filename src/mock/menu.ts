@@ -76,6 +76,31 @@ Mock.mock("http://www.ashen.ink:10500/menu", (res) => {
             order: 31,
             path: "test1",
             children: [],
+          },
+          {
+            id: 32,
+            icon: "",
+            authName: "vip",
+            order: 32,
+            path: "vip",
+            children: [
+              {
+                id: 321,
+                icon: "",
+                authName: "vip1",
+                order: 321,
+                path: "vip1",
+                children: [],
+              },
+              {
+                id: 3212,
+                icon: "",
+                authName: "test",
+                order: 3212,
+                path: "test",
+                children: [],
+              }
+            ],
           }
         ]
       },
